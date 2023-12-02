@@ -1,5 +1,7 @@
 This is how you set up timer on when the reveal of secret santa is available
 For this you will need Javascript and you can redirect to any page you wish with the following:
+https://stackoverflow.com/questions/50949376/show-a-webpage-based-on-date-and-time-criteria
+
 
 JavaScript Redirect Methods
 
