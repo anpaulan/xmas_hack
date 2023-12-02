@@ -29,7 +29,11 @@ class Participant:
             return f"🎅 {self.name} is the Secret Santa for {self.assigned_recipient.name} "  # Fix: Change from 'self.secret_santa.name' to 'self.assigned_recipient.name'
         else:
             return f"🎅 {self.name} doesn't have a Secret Santa"
-            
+        
+def shuffle(lst):
+    for i in range(len(lst) - 1, 0, -1):
+        j = random.randint(0, i)
+        lst[i], lst[j] = lst[j], lst[i]           
 '''
             asspaired[person] = None
 
