@@ -4,7 +4,15 @@ class Participant:
     def __init__(self, name):
         self.name = name
         self.assigned_recipient = None
-        
+    
+    '''
+    def adding inputs to instantiate:
+        part_list = []
+        for i in site_list(): 
+            part_list.append(i)
+    '''        
+    
+    
     def assign(self, lst): 
         # remaining_participants = [p for p in lst if p != self] # part of Ulises initial code, current is fixed version
         remaining_participants = lst[:]
