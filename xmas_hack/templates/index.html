@@ -1,0 +1,19 @@
+{%extends "layout.html"%}
+
+{% block body %}
+
+    <section id="about">
+        <h2>About Secret Santa</h2>
+        <p>Welcome to our Secret Santa event! Discover the joy of giving and receiving surprises during this festive season.</p>
+    </section>
+
+    <form id="participant-form" method="post" action="{{ url_for('home') }}">
+        <label for="participant-names">Enter Participant Names (separated by commas or line breaks):</label>
+        <textarea name="participant_names" id="participant-names" placeholder="Rico, Paul, Peter" required></textarea>
+        
+        <button type="submit">Join the Fun!</button>
+
+
+<div id="result"></div>
+
+{% endblock %}
