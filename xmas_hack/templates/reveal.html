@@ -1,8 +1,26 @@
-{%extends "layout.html"%}
+
+{% extends "layout.html" %}
+
+{% block title %}Secret Santa - Reveal{% endblock %}
 
 {% block content %}
-    <h2>Your Secret Santa Assignment:</h2>
-    <p id="reveal-result">
+    <h1>Secret Santa Assignments</h1>
+    <h1>Participant Info</h1>
+    
+    <form method="post" action="/">
+        <label for="user_input">Enter participant names (comma-separated):</label>
+        <input type="text" id="user_input" name="user_input" size="50" required>
+        <button type="submit">Add Participants</button>
+    </form>
 
-    </p>
+    <ul>
+        {% for participant in participants %}
+            <li>{{ participant.name }}</li>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for participant in participants %}
+            <li>{{ participant.name }} - {% if participant.assigned_recipient %}{{ participant.assigned_recipient.name }}{% else %}No assignment yet{% endif %}</li>
+        {% endfor %}
+    </ul>
 {% endblock %}

@@ -1,19 +1,18 @@
-{%extends "layout.html"%}
+<!-- index.html -->
+{% extends "layout.html" %}
 
-{% block body %}
+{% block title %}Secret Santa - Home{% endblock %}
 
-    <section id="about">
-        <h2>About Secret Santa</h2>
-        <p>Welcome to our Secret Santa event! Discover the joy of giving and receiving surprises during this festive season.</p>
-    </section>
-
-    <form id="participant-form" method="post" action="{{ url_for('home') }}">
-        <label for="participant-names">Enter Participant Names (separated by commas or line breaks):</label>
-        <textarea name="participant_names" id="participant-names" placeholder="Rico, Paul, Peter" required></textarea>
+{% block content %}
+    
+    <div class="container">
+        <h1>Welcome to the Secret Santa Randomizer!</h1>
+        <p>This program helps you organize a Secret Santa gift exchange.</p>
         
-        <button type="submit">Join the Fun!</button>
+        <br>
+        <a href="{{ url_for('reveal') }}">Reveal Secret Santa Assignments</a>
+        <br>
+        <a href="{{ url_for('timer') }}">Timer</a>
 
-
-<div id="result"></div>
-
+    </div>
 {% endblock %}
