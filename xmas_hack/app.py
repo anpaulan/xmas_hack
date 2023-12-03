@@ -83,6 +83,16 @@ def reveal2():
     all_participants = ParticipantModel.query.all()
     return render_template('reveal2.html', participants = all_participants)
 
+@app.route('/reset_database', methods=['POST'])
+def reset_database():
+    # Code to reset your database (you'll need to implement this based on your database setup)
+    # For example, if you're using SQLAlchemy:
+    db.drop_all()
+    db.create_all()
+
+    # Redirect back to the 'reveal' page after resetting the database
+    return redirect(url_for('reveal'))
+
 if __name__ == "__main__":
     app.run(debug=True)
 
