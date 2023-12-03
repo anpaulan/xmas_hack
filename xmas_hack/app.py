@@ -65,7 +65,7 @@ def reveal():
                 db.session.commit()
 
             all_participants = ParticipantModel.query.all()
-            return redirect(url_for('timer'))
+            return redirect(url_for('home'))
 
     return render_template('reveal.html', participants=all_participants)
 
