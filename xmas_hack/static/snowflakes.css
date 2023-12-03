@@ -1,0 +1,27 @@
+/* snowflakes.css */
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: rgb(236, 246, 253);
+  }
+  
+  .snowflake {
+    position: absolute;
+    color: #ffffff; /* Snowflake color */
+    font-size: 20px; /* Snowflake size */
+    pointer-events: none;
+    opacity: 0; /* Initially hide the snowflakes */
+    animation: fall linear infinite;
+  }
+  
+  @keyframes fall {
+    0% {
+      transform: translateY(-100vh) rotate(0deg);
+      opacity: 1; /* Fade in at the start of animation */
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0; /* Fade out at the end of animation */
+    }
+  }
+  
