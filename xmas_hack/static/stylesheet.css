@@ -1,8 +1,10 @@
 /* styles.css */
 body {
+    background: url(https://img.freepik.com/free-vector/merry-christmas-happy-new-year-text-with-santa-claus_1262-17684.jpg?w=1380&t=st=1701637076~exp=1701637676~hmac=0be504776b74d4f8d5bc0766ea9ff1c69d937f9fd6e036cc05457093cd56899e) no-repeat center center fixed;
+    background-size: 100% 100%;
     background-color: rgb(221, 244, 250); /* Change 'lightblue' to the color you want */
     text-align: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Pacifico', cursive;
     font-size: medium;
 }
 .box {
@@ -15,10 +17,10 @@ body {
     
 .homeButton {
     position: absolute;
-    top: 50px; /* Adjust the distance from the top as needed */
+    top: 10px; /* Adjust the distance from the top as needed */
     left: 10px; /* Adjust the distance from the left as needed */
     padding: 10px 20px; /* Adjust padding to change button size */
-    background-color: #ffffff; /* Button background color */
+    background-color: #efebeb; /* Button background color */
     color: #000000; /* Button text color */
     text-decoration: none; /* Remove default underline */
     border-radius: 5px; /* Add rounded corners */
@@ -27,7 +29,7 @@ body {
 .sendEmail{
     position: absolute;
     top: 10px; /* Adjust the distance from the top as needed */
-    left: 10px; /* Adjust the distance from the left as needed */
+    left: 1530px; /* Adjust the distance from the left as needed */
     padding: 10px 20px; /* Adjust padding to change button size */
     background-color: #ffffff; /* Button background color */
     color: #000000; /* Button text color */
@@ -43,4 +45,19 @@ h1 {
     font-size: xx-large;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
-.
+ul
+{
+    list-style-type: none;
+}
+button {
+    background-color: #e10d0d; /* Christmas green */
+    color: rgb(12, 2, 2);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #207d20; /* Darker green on hover */
+}
