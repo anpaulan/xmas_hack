@@ -6,17 +6,19 @@ body {
     text-align: center;
     font-family: 'Pacifico', cursive;
     font-size: medium;
+    overflow-y: scroll;
 }
 .box {
     width: 200px;
     height: 100px;
-    border: 1px solid black;
+    border: 1px solid rgb(228, 217, 217);
     padding: 10px;
     margin: 10px;
     }
     
 .homeButton {
     position: absolute;
+    font-size: 16px;
     top: 10px; /* Adjust the distance from the top as needed */
     left: 10px; /* Adjust the distance from the left as needed */
     padding: 10px 20px; /* Adjust padding to change button size */
@@ -26,16 +28,7 @@ body {
     border-radius: 5px; /* Add rounded corners */
 }
 
-.sendEmail{
-    position: absolute;
-    top: 10px; /* Adjust the distance from the top as needed */
-    left: 1530px; /* Adjust the distance from the left as needed */
-    padding: 10px 20px; /* Adjust padding to change button size */
-    background-color: #ffffff; /* Button background color */
-    color: #000000; /* Button text color */
-    text-decoration: none; /* Remove default underline */
-    border-radius: 5px; /* Add rounded corners */
-}
+
 head {
     text-align: center;
     font-size: xx-large;
@@ -43,21 +36,84 @@ head {
 
 h1 {
     font-size: xx-large;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, 'Times New Roman', Times, serif, cursive;
+    color: #f4f7f4;
 }
 ul
 {
     list-style-type: none;
-}
-button {
-    background-color: #e10d0d; /* Christmas green */
-    color: rgb(12, 2, 2);
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    text-align: left;
+    color: rgb(31, 101, 163);
 }
 
 button:hover {
-    background-color: #207d20; /* Darker green on hover */
+    background-color: #4b8b4b; /* Darker green on hover */
+}
+
+a {
+    color:rgb(246, 248, 249);
+    font-family: 'Pacifico', cursive, sans-serif;
+}
+
+h2 {
+    color: #ffffff;
+}
+
+.custom_label {
+    color: #ffffff;
+}
+
+h3 {
+    color: rgb(47, 78, 172);
+}
+
+h2 {
+    color: #ffffff;
+}
+
+.reveal_text {
+    color: #ffffff;
+}
+
+.assignment_list{
+    color: #ffffff;
+    text-align: center;
+    font-size: larger;
+}
+.button-reveal {
+    display: inline-block;
+    padding: 7px 15px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #4CAF50; /* Green background color (you can change this) */
+    color: white; /* Text color */
+    border: 1px solid #4CAF50; /* Green border (you can change this) */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s;
+}
+.button-link:hover {
+    background-color: #4CAF50; /* Darker green on hover (you can change this) */
+}
+.button-participant {
+    display: inline-block;
+    padding: 7px 15px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #4CAF50; /* Green background color (you can change this) */
+    color: white; /* Text color */
+    border: 1px solid #4CAF50; /* Green border (you can change this) */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s;
+}
+
+button {
+    background-color: #ef3c3c; /* Christmas green */
+    color: rgb(247, 243, 243);
+    font-size: 16px;
+    padding: 7px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }

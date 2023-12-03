@@ -3,13 +3,18 @@
 {% block title %}Secret Santa - Reveal{% endblock %}
 
 {% block content %}
+    <br>
     <h1>Secret Santa Assignments</h1>
     <h2>Participant Info</h2>
-    
+    <a href="/" class="homeButton">Home</a>
+    <br>
+    <br>
     <form method="POST" action="/reveal">
-        <label for="user_input">Participant Names (comma-separated):</label>
+        <label for="user_input" class='reveal_text'>Participant Names (Separated by Commas):</label>
+        <br>
+        <br>
         <input type="text" name="user_input" id="user_input" required>
-        <input type="submit" value="Add Participant">
+        <input type="submit" value="Add Participants">
     </form>
 
 

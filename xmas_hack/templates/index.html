@@ -5,11 +5,40 @@
 
 {% block content %}
 <div class="container">
-    <h1>Countdown</h1>
-    <label for="revealDateInput">Enter Reveal Date and Time:</label>
+    <h1>Welcome to the Secret Santa Randomizer!</h1>
+    <a href="{{ url_for('reveal') }}" class='button-participant'>Enter The Participants</a>
+    <h2>Countdown
+        <div id="timer"></div>
+    </h2>
+    <label for="revealDateInput" class='custom_label'>Enter Reveal Date and Time:</label>
     <input type="datetime-local" id="revealDateInput">
+    <br>
+    <br>
     <button onclick="setRevealDate()">Set Reveal Date</button>
-    <div id="timer"></div>
+    <br>
+    <a href="{{ url_for('timer') }}" class='button-reveal'>Reveal The Super Secret List</a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <ul>
+        <li>Step 1: Enter the participants' names         </li>
+        <li>Step 2: Enter each name separted by a comma   </li>
+        <li>Example: Albert, Bobbi, Carl, Danny A, Fanny P</li>
+        <li>Step 3: Click the calendar button next to "Set Reveal Date"</li>
+        <li>Step 4: Click "Reveal The Super Secret List" and see what happens!</li>
+    </ul>
+    <h3>This program helps you organize a Secret Santa gift exchange!</h3>
 </div>
 <script>
     function setRevealDate() {
@@ -49,11 +78,6 @@
 </script>
 
 <div class="container">
-    <h1>Welcome to the Secret Santa Randomizer!</h1>
-    <p>This program helps you organize a Secret Santa gift exchange.</p>
-    <br>
-    <a href="{{ url_for('reveal') }}">Enter the participants</a>
-    <br>
-    <a href="{{ url_for('timer') }}">Timer</a>
+    </ul>
 </div>
 {% endblock %}
