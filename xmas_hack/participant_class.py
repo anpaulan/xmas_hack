@@ -9,7 +9,7 @@ class Participant:
         choices = [participant for participant in participants_list]
         for person in participants_list:
             secret_person = random.choice(choices)
-            while secret_person == person or (hasattr(secret_person, 'assigned_recipient') and secret_person.assigned_recipient == person):
+            while secret_person == person  and secret_person.assigned_recipient == person:
                 secret_person = random.choice(choices)
             person.assigned_recipient = secret_person
             choices.remove(secret_person)
