@@ -1,7 +1,7 @@
+<!-- timer.html -->
 {% extends "layout.html" %}
 {% block title %}Secret Santa - Timer{% endblock %}
 {% block content %}
-
 
 <h1>NO PEAKING, YOU NEED TO BE PATIENT, Santa's watching</h1>
 <h2>Here is the Grinch for now</h2>
@@ -9,44 +9,41 @@
 <a href="/" class="homeButton">Return to Home</a>
 <a href="/send_email" class="sendEmail">Email Me The List</a>
 
-
+<div id="timer"></div>
 
 <script>
-    function goToHomePage() {
-        window.location.href = "/"; // Change the URL to your home page route
-    }
-    // Set the target date and time for the reveal
-    var revealDate; 
-    function setRevealDate() {
-        var inputDate = document.getElementById("revealDateInput").value;
-        revealDate = new Date(inputDate).getTime();
+    // Retrieve the reveal date from local storage
+    var inputDate = localStorage.getItem("revealDate");
 
-        // Start the countdown timer with the new reveal date
-        startCountdown();
-    }
-    
+    // Check if inputDate is valid and proceed with the timer logic
+    if (inputDate) {
+        // Set the target date and time for the reveal
+        var revealDate = new Date(inputDate).getTime();
 
-    // Update the countdown every 1 second
-    function startCountdown() {
+        // Update the countdown every 1 second
         var timerInterval = setInterval(function() {
             var now = new Date().getTime();
             var distance = revealDate - now;
 
-            if (distance <= 0) {
-                clearInterval(timerInterval);
-                document.getElementById("timer").innerHTML = "Reveal time!";
-                window.location.replace("/reveal2");
-                return;
-            }
-
+            // Calculate days, hours, minutes, and seconds
             var days = Math.floor(distance / (1000 * 60 * 60 * 24));
             var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+            // Display the countdown
             document.getElementById("timer").innerHTML =
                 days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+            // Redirect to the reveal2 page when the countdown reaches zero
+            if (distance <= 0) {
+                clearInterval(timerInterval);
+                window.location.replace("/reveal2");
+            }
         }, 1000);
+    } else {
+        alert("Please set a reveal date on the homepage.");
     }
 </script>
+
 {% endblock %}
