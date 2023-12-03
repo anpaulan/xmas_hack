@@ -4,15 +4,36 @@
 
 <div class="container">
     <h1>Countdown</h1>
+    <div id="timer"></div>
 </div>
-
+<h1>NO PEAKING, YOU NEED TO BE PATIENT, Santa's watching</h1>
+<h2>Here is the Grinch for now</h2>
+<img src="https://media.tenor.com/24PRiSZUd4QAAAAC/the-audacity-grinch.gif" alt="Grinch Meme" width="1000" height="600">
 <script>
-    var redirectUrl = "{{ redirect_url }}";
-    if (new Date() < new Date("2023-12-1T18:00:00")) {
-        window.location.replace("/not_yet");
-    } else {
-        window.location.replace("/reveal");
-    }
+    // Set the target date and time for the reveal
+    var revealDate = new Date("2023-12-01T18:00:00").getTime();
+
+    // Update the countdown every 1 second
+    var timerInterval = setInterval(function() {
+        var now = new Date().getTime();
+        var distance = revealDate - now;
+
+        // Calculate days, hours, minutes, and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the countdown
+        document.getElementById("timer").innerHTML =
+            days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+        // Redirect to the reveal page when the countdown reaches zero
+        if (distance <= 0) {
+            clearInterval(timerInterval);
+            window.location.replace("/reveal2");
+        }
+    }, 1000);
 </script>
 
 {% endblock %}

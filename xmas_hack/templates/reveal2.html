@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}Secret Santa - Reveal{% endblock %}
+
+{% block content %}
+<h1>Revealed Secret Santa Assignments</h1>
+{% if participants %}
+    <ul>
+        {% for participant in participants %}
+            <li>
+                <strong>{{ participant.name }}</strong> is the Secret Santa for
+                {% if participant.assigned_recipient %}
+                    <strong>{{ participant.assigned_recipient }}</strong>.
+                {% else %}
+                    No assigned recipient yet.
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No participants available.</p>
+{% endif %}
+
+{% endblock %}
