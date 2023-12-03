@@ -18,13 +18,13 @@
 
         // Validate if a date is selected
         if (inputDate) {
-            // Set the target date and time for the reveal
-            revealDate = new Date(inputDate).getTime();
+            // Set the target date and time for the reveal in local storage
+            localStorage.setItem("revealDate", inputDate);
 
             // Update the countdown every 1 second
             var timerInterval = setInterval(function() {
                 var now = new Date().getTime();
-                var distance = revealDate - now;
+                var distance = new Date(inputDate).getTime() - now;
 
                 // Calculate days, hours, minutes, and seconds
                 var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -35,8 +35,8 @@
                 // Display the countdown
                 document.getElementById("timer").innerHTML =
                     days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-
-                // Redirect to the reveal page when the countdown reaches zero
+                
+                // Redirect to the reveal2 page when the countdown reaches zero
                 if (distance <= 0) {
                     clearInterval(timerInterval);
                     window.location.replace("/reveal2");
