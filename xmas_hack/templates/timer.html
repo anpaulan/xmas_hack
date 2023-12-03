@@ -4,6 +4,9 @@
 
 <div class="container">
     <h1>Countdown</h1>
+    <label for="revealDateInput">Enter Reveal Date and Time:</label>
+    <input type="datetime-local" id="revealDateInput">
+    <button onclick="setRevealDate()">Set Reveal Date</button>
     <div id="timer"></div>
 </div>
 <h1>NO PEAKING, YOU NEED TO BE PATIENT, Santa's watching</h1>
@@ -11,29 +14,37 @@
 <img src="https://media.tenor.com/24PRiSZUd4QAAAAC/the-audacity-grinch.gif" alt="Grinch Meme" width="1000" height="600">
 <script>
     // Set the target date and time for the reveal
-    var revealDate = new Date("2023-12-01T18:00:00").getTime();
+    var revealDate; 
+    function setRevealDate() {
+        var inputDate = document.getElementById("revealDateInput").value;
+        revealDate = new Date(inputDate).getTime();
+
+        // Start the countdown timer with the new reveal date
+        startCountdown();
+    }
+    
 
     // Update the countdown every 1 second
-    var timerInterval = setInterval(function() {
-        var now = new Date().getTime();
-        var distance = revealDate - now;
+    function startCountdown() {
+        var timerInterval = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = revealDate - now;
 
-        // Calculate days, hours, minutes, and seconds
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            if (distance <= 0) {
+                clearInterval(timerInterval);
+                document.getElementById("timer").innerHTML = "Reveal time!";
+                window.location.replace("/reveal2");
+                return;
+            }
 
-        // Display the countdown
-        document.getElementById("timer").innerHTML =
-            days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // Redirect to the reveal page when the countdown reaches zero
-        if (distance <= 0) {
-            clearInterval(timerInterval);
-            window.location.replace("/reveal2");
-        }
-    }, 1000);
+            document.getElementById("timer").innerHTML =
+                days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+        }, 1000);
+    }
 </script>
-
 {% endblock %}

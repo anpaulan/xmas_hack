@@ -4,7 +4,13 @@
 {% block title %}Secret Santa - Home{% endblock %}
 
 {% block content %}
-    
+<div class="container">
+    <h1>Countdown</h1>
+    <label for="revealDateInput">Enter Reveal Date and Time:</label>
+    <input type="datetime-local" id="revealDateInput">
+    <button onclick="setRevealDate()">Set Reveal Date</button>
+    <div id="timer"></div>
+</div>
     <div class="container">
         <h1>Welcome to the Secret Santa Randomizer!</h1>
         <p>This program helps you organize a Secret Santa gift exchange.</p>
