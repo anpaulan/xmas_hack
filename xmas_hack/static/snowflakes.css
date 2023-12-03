@@ -24,4 +24,29 @@ body {
       opacity: 0; /* Fade out at the end of animation */
     }
   }
+/* styles.css */
+.box {
+  width: 200px;
+  height: 100px;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
+  }
   
+.homeButton {
+  position: absolute;
+  top: 10px; /* Adjust the distance from the top as needed */
+  left: 10px; /* Adjust the distance from the left as needed */
+  padding: 10px 20px; /* Adjust padding to change button size */
+  background-color: #ffffff; /* Button background color */
+  color: #000000; /* Button text color */
+  text-decoration: none; /* Remove default underline */
+  border-radius: 5px; /* Add rounded corners */
+}
+
+
+
+h1 {
+  font-size: xx-large;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
