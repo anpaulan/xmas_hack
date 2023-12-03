@@ -5,19 +5,14 @@ class Participant:
         self.name = name
         self.assigned_recipient = None
     
-    def assign(self, lst):
-        potential_recipients = [p for p in lst if p != self and p.assigned_recipient is None]
-
-        for participant in lst:
-            if participant != self and self.assigned_recipient is None:
-                valid_recipients = [p for p in potential_recipients if p != self.assigned_recipient]
-
-                if valid_recipients:
-                    recipient = random.choice(valid_recipients)
-                    self.assigned_recipient = recipient
-                    recipient.assigned_recipient = self
-                    potential_recipients.remove(recipient)
-                    break
+    def assign(self, participants_list):
+        choices = [participant for participant in participants_list]
+        for person in participants_list:
+            secret_person = random.choice(choices)
+            while secret_person == person or (hasattr(secret_person, 'assigned_recipient') and secret_person.assigned_recipient == person):
+                secret_person = random.choice(choices)
+            person.assigned_recipient = secret_person
+            choices.remove(secret_person)
 
     def __str__(self):
         if self.assigned_recipient:

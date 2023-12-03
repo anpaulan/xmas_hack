@@ -41,13 +41,7 @@ def reveal():
                 for participant in participants:
                     participant.assign(participants)
 
-                num_participants = len(participants)
-                for participant in participants:
-                    if num_participants % 2 == 1 and participant.assigned_recipient is None:
-                        last_participant = [p for p in participants if p.assigned_recipient is None][0]
-                        participant.assigned_recipient = last_participant
-                        last_participant.assigned_recipient = participant
-
+                
                 participants_models = []
                 for participant in participants:
                     try:
