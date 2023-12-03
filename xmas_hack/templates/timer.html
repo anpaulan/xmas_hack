@@ -1,10 +1,18 @@
-
 {% extends "layout.html" %}
-
 {% block title %}Secret Santa - Timer{% endblock %}
-
 {% block content %}
-    
 
+<div class="container">
+    <h1>Countdown</h1>
+</div>
+
+<script>
+    var redirectUrl = "{{ redirect_url }}";
+    if (new Date() < new Date("2023-12-1T18:00:00")) {
+        window.location.replace("/not_yet");
+    } else {
+        window.location.replace("/reveal");
+    }
+</script>
 
 {% endblock %}
