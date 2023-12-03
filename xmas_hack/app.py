@@ -41,13 +41,7 @@ def reveal():
                 for participant in participants:
                     participant.assign(participants)
 
-                num_participants = len(participants)
-                for participant in participants:
-                    if num_participants % 2 == 1 and participant.assigned_recipient is None:
-                        last_participant = [p for p in participants if p.assigned_recipient is None][0]
-                        participant.assigned_recipient = last_participant
-                        last_participant.assigned_recipient = participant
-
+                
                 participants_models = []
                 for participant in participants:
                     try:
@@ -88,6 +82,16 @@ def not_yet():
 def reveal2():
     all_participants = ParticipantModel.query.all()
     return render_template('reveal2.html', participants = all_participants)
+
+@app.route('/reset_database', methods=['POST'])
+def reset_database():
+    # Code to reset your database (you'll need to implement this based on your database setup)
+    # For example, if you're using SQLAlchemy:
+    db.drop_all()
+    db.create_all()
+
+    # Redirect back to the 'reveal' page after resetting the database
+    return redirect(url_for('reveal'))
 
 if __name__ == "__main__":
     app.run(debug=True)
