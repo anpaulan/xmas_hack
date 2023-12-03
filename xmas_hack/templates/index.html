@@ -11,14 +11,49 @@
     <button onclick="setRevealDate()">Set Reveal Date</button>
     <div id="timer"></div>
 </div>
-    <div class="container">
-        <h1>Welcome to the Secret Santa Randomizer!</h1>
-        <p>This program helps you organize a Secret Santa gift exchange.</p>
-        |
-        <br>
-        <a href="{{ url_for('reveal') }}">Enter the participants</a>
-        <br>
-        <a href="{{ url_for('timer') }}">Timer</a>
+<script>
+    function setRevealDate() {
+        // Get the value from the input field
+        var inputDate = document.getElementById("revealDateInput").value;
 
-    </div>
+        // Validate if a date is selected
+        if (inputDate) {
+            // Set the target date and time for the reveal
+            revealDate = new Date(inputDate).getTime();
+
+            // Update the countdown every 1 second
+            var timerInterval = setInterval(function() {
+                var now = new Date().getTime();
+                var distance = revealDate - now;
+
+                // Calculate days, hours, minutes, and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Display the countdown
+                document.getElementById("timer").innerHTML =
+                    days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+                // Redirect to the reveal page when the countdown reaches zero
+                if (distance <= 0) {
+                    clearInterval(timerInterval);
+                    window.location.replace("/reveal2");
+                }
+            }, 1000);
+        } else {
+            alert("Please select a reveal date and time.");
+        }
+    }
+</script>
+
+<div class="container">
+    <h1>Welcome to the Secret Santa Randomizer!</h1>
+    <p>This program helps you organize a Secret Santa gift exchange.</p>
+    <br>
+    <a href="{{ url_for('reveal') }}">Enter the participants</a>
+    <br>
+    <a href="{{ url_for('timer') }}">Timer</a>
+</div>
 {% endblock %}
