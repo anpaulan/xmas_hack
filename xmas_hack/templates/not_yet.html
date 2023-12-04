@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block title %}Secret Santa - Reveal{% endblock %}
+
+{% block content %}
+<div class="guessing_page">
+    <h1>CONGRATS! YOU FOUND THE EASTER EGG</h1>
+    <section id="giftGuessingGame">
+        <h2>Gift Guessing Game</h2>
+        <p>Guess the gift that your Secret Santa will give you!</p>
+        <div class="guess-input">
+            <label for="giftGuessInput">Enter Your Gift Guess:</label>
+            <input type="text" id="giftGuessInput" placeholder="e.g., bag of coals">
+        </div>
+        <br>
+        <button onclick="submitGiftGuess()">Submit Guess</button>
+        <div id="resultMessage"></div>
+    </section>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<ul>
+    <li>CONGRATS, YOU ACTUALLY FOUND THE EASTER EGG</li>
+    <br>
+    <li>Which means 1 of 2 things: </li>
+    <li>1. You are a nerd like us!</li>
+    <li>2. You used to cheat on your online quizzes at school</li>
+    <br>
+    <li>Only Santa will know which category you fall under!</li>
+    <br>
+    <li style="font-size: 30px; color: red;">Finding this page is the easy part, good luck finding the correct answer!</li>
+</ul>
+<script>
+    function submitGiftGuess() {
+        var giftGuess = document.getElementById("giftGuessInput").value;
+        if (giftGuess) {
+            var isCorrect = checkIfCorrectGuess(giftGuess);
+            var resultMessage = document.getElementById("resultMessage");
+            resultMessage.innerHTML = isCorrect
+                ? "Correct guess! You're good at this!"
+                : "Nice try! Maybe next time.";
+            document.getElementById("giftGuessInput").value = "";
+        } else {
+            alert("Please enter your gift guess.");
+        }
+    }
+
+    function checkIfCorrectGuess(giftGuess) {
+        return giftGuess.toLowerCase() === "flagship admission";
+    }
+</script>
+{% endblock %}
