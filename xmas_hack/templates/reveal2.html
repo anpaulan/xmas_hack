@@ -10,7 +10,7 @@
     <ul class='assignment_list'>
         {% for participant in participants %}
             <li>
-                <strong>{{ participant.name }}</strong> is the Secret Santa for
+                <strong>🎅 {{ participant.name }}</strong> is the Secret Santa for
                 {% if participant.assigned_recipient %}
                     <strong>{{ participant.assigned_recipient }}</strong>.
                 {% else %}

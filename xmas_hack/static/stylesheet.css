@@ -1,7 +1,7 @@
 /* styles.css */
 body {
-    background: url(https://img.freepik.com/free-vector/merry-christmas-happy-new-year-text-with-santa-claus_1262-17684.jpg?w=1380&t=st=1701637076~exp=1701637676~hmac=0be504776b74d4f8d5bc0766ea9ff1c69d937f9fd6e036cc05457093cd56899e) no-repeat center center fixed;
-    background-size: 100% 100%;
+    background: url(https://images.unsplash.com/photo-1545608444-f045a6db6133?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat center center fixed;
+    background-size: auto;
     background-color: rgb(221, 244, 250); 
     text-align: center;
     font-family: 'Pacifico', cursive;
@@ -42,8 +42,8 @@ h1 {
 ul
 {
     list-style-type: none;
-    text-align: left;
-    color: rgb(31, 101, 163);
+    text-align: left ;
+    color: rgb(255, 255, 255);
 }
 
 button:hover {
@@ -64,7 +64,7 @@ h2 {
 }
 
 h3 {
-    color: rgb(47, 78, 172);
+    color: rgb(255, 255, 255);
 }
 
 h2 {
@@ -74,15 +74,15 @@ h2 {
 .reveal_text {
     color: rgb(249, 249, 249);
 }
-.background-container {
+/* .background-container {
     background-color: #ffffff; 
     padding: 20px; 
     width: 25%;
     margin: 0 auto;
-}
+} */
 .assignment_list{
-    color: rgb(131, 210, 57);
-    text-align: left;
+    color: rgb(79, 87, 70);
+    text-align: center;
     font-size: larger;
     margin: 0 auto;
 }

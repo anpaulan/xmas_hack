@@ -30,13 +30,7 @@ class Participant:
         else:
             return f"🎅 {self.name} doesn't have a Secret Santa"
 
-    '''
-            secret_person = random.choice(choices)
-            while secret_person == person and secret_person.assigned_recipient == person:
-                secret_person = random.choice(choices)
-            person.assigned_recipient = secret_person
-            choices.remove(secret_person)
-    '''
+
         
 def shuffle(lst):
     for i in range(len(lst) - 1, 0, -1):
