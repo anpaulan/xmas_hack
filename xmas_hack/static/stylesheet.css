@@ -37,10 +37,10 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .button-container{
-    position:relative;
+    position: relative;
     align-items: center ;
     top: 10px;
-    right: 10px;
+    
 }
 
 button {
