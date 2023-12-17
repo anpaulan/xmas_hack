@@ -15,8 +15,30 @@ body {
     padding: 10px;
     margin: 10px;
 }
+.button-edit{
+    background-color: #b02828;
+    color: rgb(247, 243, 243);
+    font-size: 16px;
+    padding: 7px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.button-edit:hover {
+    display: inline-block;
+    padding: 7px 15px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #19811d; 
+    color: white; 
+    border-radius: 5px; 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
 .button-container{
     position:relative;
+    align-items: center ;
     top: 10px;
     right: 10px;
 }
