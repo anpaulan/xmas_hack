@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block title %}Secret Santa - Timer{% endblock %}
+{% block content %}
+<style>
+    ul {
+        list-style-type: none;
+        padding: 0;
+        text-align: center; 
+    }
+
+    li {
+        margin: 0 10px; 
+    }
+
+ 
+    .delete-link {
+        color: red;
+        cursor: pointer;
+        margin-left: 5px;
+    }
+</style>
+    <h1>Edit Participants</h1>
+    
+  
+    <form method="POST" action="{{ url_for('add_participant') }}">
+        {{ add_form.hidden_tag() }}
+        {{ add_form.name.label }} {{ add_form.name(size=20) }}
+        <input type="submit" value="Add">
+    </form>
+
+    <ul>
+        {% for participant in participants %}
+            <li>
+                {{ participant.name }}
+                <a href="#" class="delete-link" data-participant-id="{{ participant.id }}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('reveal_list') }}">Randomize Participants</a>
+
+    <script>
+  
+        document.addEventListener('DOMContentLoaded', function() {
+            var deleteLinks = document.querySelectorAll('.delete-link');
+            deleteLinks.forEach(function(link) {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    var participantId = link.getAttribute('data-participant-id');
+                    
+                    if (participantId !== '') {
+                        var confirmDelete = confirm('Are you sure you want to delete this participant?');
+                        
+                        if (confirmDelete) {
+                            window.location.href = '/delete/' + participantId;
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock %}
