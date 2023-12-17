@@ -7,25 +7,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='snowflakes.css') }}"> <!-- Link to snowflakes.css -->
     <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}"> <!-- Link to snowflakes.css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}"> <!-- Link to snowflakes.css -->
     <a href="/" class="homeButton">Home</a>
 
     <title>{% block title %}Secret Santa{% endblock %}</title>
-
-    
 </head>
 
-<body>
-    <iframe width="0" height="0" src="https://www.youtube.com/embed/5TuxUT61bi0?si=3yUG_TXrZkjLQm7s&amp;controls=0&amp;start=17" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
-
-    <audio controls loop autoplay>
-        <source src="https://example.com/path/to/background_music.mp3" type="audio/mp3">
-    </audio>
+<body> 
     
     <div class="container">
         {% block content %}{% endblock %}
     </div>
     <script src="{{ url_for('static', filename='snowflakes.js') }}"></script>
+    <script>
+        // Get references to the Grinch and Santa images
+        const grinch = document.getElementById('grinch');
+        const santa = document.getElementById('santa');
 
+        // Initial positions
+        let grinchPosition = 0;
+        let santaPosition = 0;
+
+        // Function to move the Grinch and Santa Claus
+        function chase() {
+            // Update positions
+            grinchPosition += 5; // Adjust the speed of the chase
+            santaPosition += 7; // Adjust the speed of the chase
+
+            // Set new positions
+            grinch.style.left = grinchPosition + 'px';
+            santa.style.left = santaPosition + 'px';
+
+            // Repeat the chase animation using requestAnimationFrame
+            if (santaPosition < window.innerWidth) {
+                requestAnimationFrame(chase);
+            } else {
+                alert('The Grinch caught Santa!');
+            }
+        }
+
+        // Start the chase when the page loads
+        window.onload = chase;
+    </script>
+    
 </body>
 
 </html>

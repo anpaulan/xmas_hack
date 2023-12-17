@@ -2,9 +2,9 @@
 body {
     background: url(https://images.unsplash.com/photo-1545608444-f045a6db6133?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat center center fixed;
     background-size: auto;
-    background-color: rgb(221, 244, 250); 
+    background-color: rgb(255, 255, 255); 
     text-align: center;
-    font-family: 'Pacifico', cursive;
+    font-family: cursive;
     font-size: medium;
     overflow-y: scroll;
 }
@@ -14,92 +14,27 @@ body {
     border: 1px solid rgb(228, 217, 217);
     padding: 10px;
     margin: 10px;
-    }
-    
-.homeButton {
-    position: absolute;
+}
+.button-container{
+    position:relative;
+    top: 10px;
+    right: 10px;
+}
+
+button {
+    background-color: #b02828;
+    color: rgb(247, 243, 243);
     font-size: 16px;
-    top: 10px; 
-    left: 10px; 
-    padding: 3px 10px; 
-    background-color: #ffffff;
-    color: #000000; 
-    text-decoration: none; 
-    border-radius: 5px; 
-}
-
-
-head {
-    text-align: center;
-    font-size: xx-large;
-}
-
-h1 {
-    font-size: xx-large;
-    font-family: Georgia, 'Times New Roman', Times, serif, cursive;
-    color: #f4f7f4;
-}
-ul
-{
-    list-style-type: none;
-    text-align: left ;
-    color: rgb(255, 255, 255);
+    padding: 7px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 button:hover {
-    background-color: #4b8b4b; 
-}
-
-a {
-    color:rgb(246, 248, 249);
-    font-family: 'Pacifico', cursive, sans-serif;
-}
-
-h2 {
-    color: #ffffff;
-}
-
-.custom_label {
-    color: #ffffff;
-}
-
-h3 {
-    color: rgb(255, 255, 255);
-}
-
-h2 {
-    color: #ffffff;
-}
-
-.reveal_text {
-    color: rgb(249, 249, 249);
-}
-/* .background-container {
-    background-color: #ffffff; 
-    padding: 20px; 
-    width: 25%;
-    margin: 0 auto;
-} */
-.assignment_list{
-    color: rgb(79, 87, 70);
-    text-align: center;
-    font-size: larger;
-    margin: 0 auto;
-}
-.button-reveal {
-    display: inline-block;
-    padding: 7px 15px;
-    font-size: 16px;
-    text-align: center;
-    text-decoration: none;
-    background-color: #4CAF50;
-    color: white; 
-    border: 1px solid #4CAF50; 
-    border-radius: 5px; 
-    transition: background-color 0.3s;
-}
-.button-link:hover {
-    background-color: #4CAF50;
+    background-color: #19811d; 
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .button-participant {
     display: inline-block;
@@ -107,22 +42,113 @@ h2 {
     font-size: 16px;
     text-align: center;
     text-decoration: none;
-    background-color: #4CAF50; 
+    background-color: #19811d; 
     color: white; 
-    border: 1px solid #4CAF50; 
     border-radius: 5px; 
-    transition: background-color 0.3s;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.button-participant:hover {
+    background-color: #b02828;
+}
+.button-link:hover {
+    background-color: #19811d;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.button-reveal {
+    display: inline-block;
+    padding: 7px 15px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #19811d;
+    border-radius: 5px; 
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-button {
-    background-color: #ef3c3c;
-    color: rgb(247, 243, 243);
-    font-size: 16px;
-    padding: 7px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.button-reveal:hover{
+    background-color: #b02828;
+    
 }
+.countdown-section {
+    position: absolute;
+    top: 30px;
+    right: 70px;
+    align-items: center;
+}
+.homeButton {
+    position: absolute;
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    top: 10px; 
+    left: 10px; 
+    padding: 3px 10px; 
+    background-color: #ffffff;
+    color: #000000; 
+    text-decoration: none; 
+}
+
+head {
+    text-align: center;
+    font-size: xx-large;
+    font-family: cursive;
+}
+
+a {
+    color:rgb(246, 248, 249);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.custom_label {
+    color: #ffffff;
+}
+
+ul
+{
+    list-style-type: none;
+    color: rgb(255, 255, 255);
+    font-family: cursive;
+}
+
+h1 {
+    font-size: xx-large;
+    font-family: Georgia, 'Times New Roman', Times, serif, cursive;
+    color: #f4f7f4;
+    font-style: italic;
+}
+
+
+h2 {
+    color: #ffffff;
+    font-family: cursive;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+h3 {
+    color: rgb(255, 255, 255);
+    font-family: cursive;
+}
+
+
+.reveal_text {
+    color: rgb(249, 249, 249);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.background-container {
+
+    padding: 20px; 
+    width: 25%;
+    margin: 0 auto;
+}
+.assignment_list strong{
+    color: rgb(210, 55, 55);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: left, center;
+    font-size: large;
+    font-style: italic;
+    margin: 0 auto;
+}
+
 
 .guessing_page {
     color: rgb(247, 243, 243);
@@ -131,4 +157,47 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+img {
+    border-radius: 30px;
+    height: auto;
+    border: #ffffff;
+    border-style: solid;
+}
+
+.timer {
+    color: #ffffff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: x-large;
+    text-transform: uppercase;
+}
+
+.steps-home {
+    color: rgb(210, 55, 55);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: left, center;
+    font-size: large;
+    font-style: italic;
+    margin: 0 auto;
+}
+
+.santa {
+    position:fixed;
+    top: 140px;
+    left: 50px;
+    transition: left 5s linear; 
+    border: none;
+    width: 20%;
+    height: auto;
+}
+
+.grinch {
+    position: fixed;
+    top: 100px;
+    right: 30px;
+    transition: left 5s linear; 
+    border: none;
+    width: 20%;
+    height: auto;
 }

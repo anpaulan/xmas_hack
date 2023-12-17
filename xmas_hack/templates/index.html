@@ -4,43 +4,63 @@
 {% block title %}Secret Santa - Home{% endblock %}
 
 {% block content %}
+<audio controls>
+    <source src="/audio/christmas.mp3" type="audio/mp3">
+  </audio>
+
+  <img src="{{ url_for('static', filename='images/santa_image.gif') }}" alt="Santa" class="santa">
+  <img src="{{ url_for('static', filename='images/grinch.gif') }}" alt="grinch" class="grinch">
+
 <div class="container">
     <h1>Welcome to the Secret Santa Randomizer!</h1>
-    <a href="{{ url_for('reveal') }}" class='button-participant'>Enter The Participants</a>
-    <h2>Countdown
-        <div id="timer"></div>
-    </h2>
+    <div class="santa_gif" style="position: relative; overflow: hidden; width: 100%;">
+        <img src="{{ url_for('static', filename='images/santa_image.gif') }}" alt="Santa" id="santa" style="position: absolute; left: 0; z-index: 999;">
+    </div>
+
+    <div class = "countdown-section">
+        <h2>Countdown
+            <div id="timer"></div>
+        </h2>
+    </div>
+    <br><br>
+    <div class= "steps-home">
     <ul>
-        <li>Step 1: Enter the participants' names         </li>
-        <li>Step 2: Enter each name separated by a comma   </li>
-        <li>Example: Albert, Bobbi, Carl, Danny A, Fanny P</li>
-        <li>Step 3: Click the calendar button next to "Set Reveal Date"</li>
-        <li>Step 4: Click "Reveal The Super Secret List" and see what happens!</li>
-        <li>Optional: Once the timer is up and you click 'Reveal Super Secret list', you can reset the list for a new group of people</li>
-        <li>If you cannot see the option to reset your list, change the reveal date to the past </li>
+        <li>Step 1: Enter the participants        </li>
+        <li>Step 2: Set Reveal Date</li>
+        <li>Step 3: Reveal The Super Secret List</li>
         <li>BONUS! We left an easter egg for the brave, good luck! </li>
     </ul>
+    </div>
+    <div class='button-container'>
+        <a href="{{ url_for('reveal') }}" class='button-participant'>Enter The Participants</a>
+        <br>
+        <button onclick="setRevealDate()">Set Reveal Date</button>
+        <br>
+        <a href="{{ url_for('timer') }}" class='button-reveal'>Reveal The Super Secret List</a>
+    </div>
+    <br>
     <label for="revealDateInput" class='custom_label'>Enter Reveal Date and Time:</label>
+    <br>
     <input type="datetime-local" id="revealDateInput">
-    <br>
-    <br>
-    <button onclick="setRevealDate()">Set Reveal Date</button>
-    <br>
-    <a href="{{ url_for('timer') }}" class='button-reveal'>Reveal The Super Secret List</a>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <br><br><br><br><br><br><br><br>
     <h3>This program helps you organize a Secret Santa gift exchange!</h3>
 </div>
+
 <script>
+    const santa = document.getElementById('santa');
+    let santaPosition = 0;
+
+    function moveSanta() {
+        santaPosition += 2;
+
+        if (santaPosition < document.querySelector('.santa_gif').clientWidth) {
+            santaPosition = -santa.clientWidth;
+        }
+
+        santa.style.left = santaPosition + 'px';
+        requestAnimationFrame(moveSanta);
+    }
+    window.onload = moveSanta;
     function setRevealDate() {
         // Get the value from the input field
         var inputDate = document.getElementById("revealDateInput").value;
@@ -80,7 +100,4 @@
 <div class="container">
     </ul>
 </div>
-<audio controls loop autoplay>
-    <source src="https://example.com/path/to/background_music.mp3" type="audio/mp3">
-  </audio>
 {% endblock %}
