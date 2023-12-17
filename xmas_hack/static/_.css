@@ -1,0 +1,138 @@
+/* styles.css */
+body {
+    background: url(https://images.unsplash.com/photo-1545608444-f045a6db6133?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat center center fixed;
+    background-size: auto;
+    background-color: rgb(221, 244, 250); 
+    text-align: center;
+    font-family: cursive;
+    font-size: medium;
+    overflow-y: scroll;
+}
+.box {
+    width: 200px;
+    height: 100px;
+    border: 1px solid rgb(228, 217, 217);
+    padding: 10px;
+    margin: 10px;
+    }
+    
+.homeButton {
+    position: absolute;
+    font-size: 16px;
+    top: 10px; 
+    left: 10px; 
+    padding: 3px 10px; 
+    background-color: #ffffff;
+    color: #000000; 
+    text-decoration: none; 
+    border-radius: 5px; 
+}
+
+
+head {
+    text-align: center;
+    font-size: xx-large;
+}
+
+h1 {
+    font-size: xx-large;
+    font-family: Georgia, 'Times New Roman', Times, serif, cursive;
+    color: #f4f7f4;
+}
+ul
+{
+    list-style-type: none;
+    text-align: left ;
+    color: rgb(255, 255, 255);
+}
+
+button:hover {
+    background-color: #4b8b4b; 
+}
+
+a {
+    color:rgb(246, 248, 249);
+    font-family: 'Pacifico', cursive, sans-serif;
+}
+
+h2 {
+    color: #ffffff;
+}
+
+.custom_label {
+    color: #ffffff;
+}
+
+h3 {
+    color: rgb(255, 255, 255);
+}
+
+h2 {
+    color: #ffffff;
+}
+
+.reveal_text {
+    color: rgb(249, 249, 249);
+}
+/* .background-container {
+    background-color: #ffffff; 
+    padding: 20px; 
+    width: 25%;
+    margin: 0 auto;
+} */
+.assignment_list{
+    color: rgb(79, 87, 70);
+    text-align: center;
+    font-size: larger;
+    margin: 0 auto;
+}
+.button-reveal {
+    display: inline-block;
+    padding: 7px 15px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: white; 
+    border: 1px solid #4CAF50; 
+    border-radius: 5px; 
+    transition: background-color 0.3s;
+}
+.button-link:hover {
+    background-color: #4CAF50;
+}
+.button-participant {
+    display: inline-block;
+    padding: 7px 15px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #4CAF50; 
+    color: white; 
+    border: 1px solid #4CAF50; 
+    border-radius: 5px; 
+    transition: background-color 0.3s;
+}
+
+button {
+    background-color: #ef3c3c;
+    color: rgb(247, 243, 243);
+    font-size: 16px;
+    padding: 7px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.guessing_page {
+    color: rgb(247, 243, 243);
+    font-size: 16px;
+    padding: 7px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.assignment_list li strong {
+    font-style: italic;
+}
