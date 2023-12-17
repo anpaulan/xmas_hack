@@ -194,7 +194,7 @@ img {
 
 .grinch {
     position: fixed;
-    top: 100px;
+    top: 95px;
     right: 30px;
     transition: left 5s linear; 
     border: none;

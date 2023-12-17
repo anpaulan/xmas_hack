@@ -5,8 +5,8 @@
 
 {% block content %}
 <audio controls>
-    <source src="/audio/christmas.mp3" type="audio/mp3">
-  </audio>
+    <source src="{{url_for('static', filename= 'christmas.mp3')}}" type="audio/mp3">
+</audio>
 
   <img src="{{ url_for('static', filename='images/santa_image.gif') }}" alt="Santa" class="santa">
   <img src="{{ url_for('static', filename='images/grinch.gif') }}" alt="grinch" class="grinch">
