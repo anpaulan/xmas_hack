@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Participant</title>
+</head>
+<body>
+    <h1>Add Participant</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.name.label }} {{ form.name(size=20) }}<br>
+        {{ form.assigned_recipient_id.label }} {{ form.assigned_recipient_id }}<br>
+        {{ form.assigned_recipient.label }} {{ form.assigned_recipient(size=20) }}<br>
+        <input type="submit" value="Add">
+    </form>
+</body>
+</html>
