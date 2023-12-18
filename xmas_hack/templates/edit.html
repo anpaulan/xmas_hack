@@ -12,23 +12,31 @@
         margin: 0 10px; 
     }
 
- 
+    h1 {
+        color: white
+    }
+
     .delete-link {
         color: red;
         cursor: pointer;
         margin-left: 5px;
     }
+    .name {
+        color: white;
+    }
 </style>
-    <h1>Edit Participants</h1>
-    
+    <h1>Edit Participants</h1>    <br>
   
     <form method="POST" action="{{ url_for('add_participant') }}">
         {{ add_form.hidden_tag() }}
-        {{ add_form.name.label }} {{ add_form.name(size=20) }}
-        <input type="submit" value="Add">
-    </form>
-
-    <ul>
+        {{ add_form.name.label (style='color:white; font-size: large;') }} {{ add_form.name(style='border-radius: 5px; font-size: large;' , size=20) }}
+        <input type="submit" value="Add" style="border-radius: 5px; font-size: large;">
+    </form><br>
+    
+    <a href="{{ url_for('reveal_list') }}" style='font-size: larger'>Randomize Participants</a><br><br>
+    
+<div class='container'>
+    <ul class='participant-list'>
         {% for participant in participants %}
             <li>
                 {{ participant.name }}
@@ -37,8 +45,7 @@
         {% endfor %}
     </ul>
 
-    <a href="{{ url_for('reveal_list') }}">Randomize Participants</a>
-
+</div>
     <script>
   
         document.addEventListener('DOMContentLoaded', function() {

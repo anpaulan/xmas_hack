@@ -16,9 +16,8 @@
         {% for participant in participants %}
         <font face="cursive">
             <li>
-                <strong>🎅 {{ participant.name }}</strong> is the Secret Santa for 
-                {% if participant.assigned_recipient %}
-                    <strong>{{ participant.assigned_recipient }}</strong>.
+                <strong>🎅 {{ participant.name }}</strong> is the Secret Santa for {% if participant.assigned_recipient %}
+                    <strong>{{ participant.assigned_recipient }}</strong>
                 {% else %}
                     No assigned recipient yet.
                 {% endif %}

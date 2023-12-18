@@ -4,15 +4,15 @@
 
 {% block content %}
     <br>
-    <h1>Secret Santa Assignments</h1>
+    <h1>Secret Santa Assignments</h1><br>
     <h2>Participant Info</h2>
     <br><br>
     <form method="POST" action="/reveal">
-        <label for="user_input" class='reveal_text'>Participant Names (Separated by Commas):</label>
+        <label for="user_input" class='reveal_text' style='font-size: larger'>Participant Names (Separated by Commas):</label>
         <br>
         <br>
-        <input type="text" name="user_input" id="user_input" required>
-        <input type="submit" value="Add Participants">
+        <input type="text" name="user_input" id="user_input" required style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; border-radius: 5px; font-size: large" >
+        <input type="submit" value="Add Participants" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; border-radius: 5px; font-size: large;">
     </form>
     </ul>
 {% endblock %}

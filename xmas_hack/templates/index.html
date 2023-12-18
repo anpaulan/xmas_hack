@@ -12,13 +12,13 @@
   <img src="{{ url_for('static', filename='images/grinch.gif') }}" alt="grinch" class="grinch">
 
 <div class="container">
-    <h1>Welcome to the Secret Santa Randomizer!</h1>
+    <h1 class='welcome'>Welcome to the Secret Santa Randomizer!</h1>
     <div class="santa_gif" style="position: relative; overflow: hidden; width: 100%;">
         <img src="{{ url_for('static', filename='images/santa_image.gif') }}" alt="Santa" id="santa" style="position: absolute; left: 0; z-index: 999;">
     </div>
 
     <div class = "countdown-section">
-        <h2>Countdown
+        <h2 style='color: #fffff'>Countdown
             <div id="timer" class='timer'></div>
         </h2>
     </div>
@@ -40,18 +40,22 @@
     </div>
     <br>
     <label for="revealDateInput" class='custom_label'>Enter Reveal Date and Time:</label>
-    <br>
-    <input type="datetime-local" id="revealDateInput">
-    <br>
-    <button href="{{ url_for('edit_participants') }} class ='button-edit">Edit Existing List</button>
-    <br><br><br><br><br><br><br><br>
-    <h3>This program helps you organize a Secret Santa gift exchange!</h3>
+    <br><br>
+    <input type="datetime-local" id="revealDateInput" style="border-radius: 5px">
+    <br><br>
+    <button onclick= "edit_participants()" class="button-edit">Edit Participant List</button>
+    <br><br><br><br><br>
+    <h3 class= "home-bottom">This program helps you organize a Secret Santa gift exchange!</h3>
 </div>
 
 <script>
+    function edit_participants() {
+        window.location.href='{{url_for('edit_participants')}}'
+    }
+    
     const santa = document.getElementById('santa');
     let santaPosition = 0;
-
+    
     function moveSanta() {
         santaPosition += 2;
 
